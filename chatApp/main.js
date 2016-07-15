@@ -3,7 +3,7 @@
 	
 	$("#click").click(function (){
 	var text = $('#myvalue').val();
-	DATA.push(text);
+	DATA.push($('#myname').val()+":"+text);
 	$('#myvalue').val('');	
 	RenderJSON(DATA);
    	 save(DATA);	
@@ -13,13 +13,13 @@
 	});
 	
 	
-    function RenderJSON(data){
+    function RenderJSON(data, uname){
 		
 		$("#container").empty();
 	for (var i=0;  i< data.length; i++){
 		
 		  var text = $('#myvalue').val();
-		 $("#container").append('<div id="' + data[i] + '"> <input type="checkbox" name="check" ><label>'+data[i]+' </label><br></div> ');
+		 $("#container").append('<div id="' + data[i] + '">   <label>'+data[i]+' </label><br></div> ');
 			
 			
 			
@@ -64,3 +64,4 @@
 
 load();
      
+	 setInterval (function(){ load() }, 500);
