@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+<div id="container">
+		
+        <input type="text" id="text" value="" placeholder="enter your topic title"><br>
+        <input type="text" id="user" value="" placeholder="enter the user name"><br>
+        <input type="button" id="submit" value="Publish">
+        
+        
+
+
+</div>
+
+   	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  
+  				
+<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7Ydy4KPMRYtHdm3ExX1zyRRnEOZuxZBk",
+    authDomain: "starter-6ea38.firebaseapp.com",
+    databaseURL: "https://starter-6ea38.firebaseio.com",
+    storageBucket: "starter-6ea38.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+    
+<script src="main.js"></script>
+
+
+</body>
+</html>
