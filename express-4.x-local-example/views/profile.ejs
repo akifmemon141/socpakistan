@@ -1,0 +1,46 @@
+
+<% if (!user) { %>
+	<p>Welcome! Please <a href="/login">log in</a>.</p>
+<% } else { %>
+
+
+<p>
+ID: <%= user.id %><br/>
+Username: <%= user.username %><br/>
+Name: <%= user.displayName %><br/>
+<% if (user.emails) { %>
+Email: <%= user.emails[0].value %><br/>
+<% } %>
+</p>
+   <input type="text" placeholder="Enter the task" id="myvalue">
+    <input type="submit" value="Done" id="click"><br>
+    <div id="container">
+    <% if (user) { %>
+    <% for(var i=0; i<user.todolist.length; i++) { %>
+        <li>
+            <div id='<%= i %>'>
+                <label>
+                    <input type="checkbox" />
+                    <%= user.todolist[i] %>
+                </label>
+            </div>
+        </li>
+    <% } %>
+    
+<% } else { %>
+    <p>Hello, <%= user.username %>. Click here to <a href="/login">login</a>.</p>
+<% } %>
+	</div>
+ 
+
+
+<a href="/logout">Log out</a>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="main.js"></script>
+
+		
+
+	
+<% } %>
+
